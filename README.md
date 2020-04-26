@@ -1,2 +1,3 @@
-# gostack-03.front-end_reactjs
-Conceitos de Front-end com ReactJS
+# Front-end com ReactJS
+
+Primeiros conceitos do ReactJS desenvolvendo a primeira aplicação web e conectando com o back-end criado anteriormente.
