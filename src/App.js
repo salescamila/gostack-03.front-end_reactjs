@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Header from './components/Header';
 
+/**
+ * Componente: Funções JavaScript que aceitam entradas arbritárias
+ *            (chamadas "props") e retornam elementos React que
+ *            descrevem o que deve aparecer na tela.
+ * Propriedade: É qualquer informação passada de um componente pai para um
+ *              componente filho.
+ * Estado: propriedade do componente onde colocamos dados que, quando mudados,
+ *         devem causar uma nova renderização
+ * Imutabilidade: Não é permitido alterar uma variável, é preciso sempre recriar.
+ *                É um conceito utilizado no React para garantir performance
+ *                mesmo em aplicações que contenham muitos dados.
+ */
+
 function App() {
-  const projects = ['Desenvolvimento de app', 'Front-end web'];
+  // useState retorna um array com 2 posições
+  //
+  // 1. Variável com o seu valor inicial
+  // 2. Função para atualizarmos esse valor
+  const [projects, setProjects] = useState(['Desenvolvimento de app', 'Front-end web']);
 
   function handleAddProject() {
-    projects.push(`Novo projeto ${Date.now()}`);
-
-    console.log(projects);
+    setProjects([...projects, `Novo projeto ${Date.now()}`]);
   }
 
   return (
