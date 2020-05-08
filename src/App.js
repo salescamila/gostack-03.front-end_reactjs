@@ -29,10 +29,19 @@ function App() {
     api.get('projects').then(response => {
       setProjects(response.data);
     })
-  }, []);
+  }, [projects]);
 
-  function handleAddProject() {
-    setProjects([...projects, `Novo projeto ${Date.now()}`]);
+  async function handleAddProject() {
+    //setProjects([...projects, `Novo projeto ${Date.now()}`]);
+
+    const reponse = await api.post('projects', {
+      title: `Novo projeto ${Date.now()}`,
+      owner: "Camila Sales"
+    });
+
+    const project = response.data;
+
+    setProjects([...projects, project]);
   }
 
   return (
